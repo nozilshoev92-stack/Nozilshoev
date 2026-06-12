@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бароти Абдураҳмон — Сайти Расмӣ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=500;700&family=Cormorant+Garamond:ital,wght=0,400;0,600;0,700;1,400&family=Montserrat:wght=300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0b111e;
+            color: #ffffff;
+        }
+        .font-brand {
+            font-family: 'Cinzel', serif;
+        }
+        .font-serif-book {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .text-gold {
+            color: #ffc222;
+        }
+        .bg-gold {
+            background-color: #c49a45;
+        }
+        .bg-gold:hover {
+            background-color: #b38936;
+        }
+        
+        /* ЗАМИНАИ АСОСӢ */
+        .hero-bg {
+            background: linear-gradient(to right, rgba(11, 17, 30, 0.95), rgba(11, 17, 30, 0.85)), 
+                        url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* ЗАМИНАИ КОҒАЗӢ БАРОИ САҲИФАИ 2 */
+        .paper-bg {
+            background-color: #f7f7f7;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='paper-texture'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23fff' surfaceScale='2'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3CfeDiffuseLighting%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23paper-texture)' opacity='0.15'/%3E%3C/svg%3E");
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* ЗАМИНАИ КАБУДИ БОФТАШУДА БАРОИ САҲИФАИ 3 */
+        .blue-texture-bg {
+            background-color: #0b111e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.15' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        .author-placeholder {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.05));
+        }
+        
+        .book-deep-shadow {
+            box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.5), 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Суръати аниматсия барои ҳамаи унсурҳо */
+        .smooth-move {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Услуби ҳарфи калони аввал (Drop Cap) */
+        .biography-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #c49a45;
+            float: left;
+            margin-right: 0.75rem;
+            line-height: 1;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Намоиши Dropdown */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased scroll-smooth">
+
+    <header class="bg-[#080d17] border-b border-gray-900 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-xl font-bold tracking-wider text-gold font-brand uppercase data-lang" data-tg="Бароти Абдураҳмон" data-ru="Бароти Абдурахмон">Бароти Абдураҳмон</span>
+                <span class="text-[9px] uppercase tracking-widest text-gray-400 -mt-1 data-lang" data-tg="Нависандаи маҳбуби тоҷик" data-ru="Известный таджикский писатель">Нависандаи маҳбуби тоҷик</span>
+            </div>
+            
+            <div class="flex items-center space-x-8 space-x-reverse">
+                <nav class="hidden md:flex space-x-8 space-x-reverse text-xs font-semibold tracking-widest uppercase text-gray-300 items-center">
+                    
+                    <!-- МЕНЮИ НАВИ АФТИРАНДА (DROPDOWN MENU) -->
+                    <div class="relative dropdown group py-2">
+                        <button class="flex items-center space-x-1 hover:text-gold smooth-move tracking-widest uppercase focus:outline-none font-bold">
+                            <span class="data-lang" data-tg="МЕНЮ" data-ru="МЕНЮ">МЕНЮ</span>
+                            <svg class="w-4 h-4 text-gold transform group-hover:rotate-180 smooth-move" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        
+                        <!-- Рӯйхати бахшҳои меню -->
+                        <div class="dropdown-menu absolute right-0 mt-2 w-52 bg-[#0d1628] border border-gray-800 rounded-sm shadow-xl hidden opacity-0 transform -translate-y-2 transition-all duration-300 z-50">
+                            <div class="py-1">
+                                <a href="#biography-section" class="block px-4 py-3 text-gray-300 hover:bg-[#15223c] hover:text-gold smooth-move border-b border-gray-800/50">
+                                    <span class="data-lang" data-tg="Зиндагинома" data-ru="Биография">Зиндагинома</span>
+                                </a>
+                                <a href="#books-grid-section" class="block px-4 py-3 text-gray-300 hover:bg-[#15223c] hover:text-gold smooth-move border-b border-gray-800/50">
+                                    <span class="data-lang" data-tg="Китобҳо" data-ru="Книги">Китобҳо</span>
+                                </a>
+                                <a href="#poetry-section" class="block px-4 py-3 text-gray-300 hover:bg-[#15223c] hover:text-gold smooth-move border-b border-gray-800/50">
+                                    <span class="data-lang" data-tg="Ашъор" data-ru="Поэзия">Ашъор</span>
+                                </a>
+                                <a href="#photos-section" class="block px-4 py-3 text-gray-300 hover:bg-[#15223c] hover:text-gold smooth-move border-b border-gray-800/50">
+                                    <span class="data-lang" data-tg="Аксҳо" data-ru="Фотогалерея">Аксҳо</span>
+                                </a>
+                                <a href="#videos-section" class="block px-4 py-3 text-gray-300 hover:bg-[#15223c] hover:text-gold smooth-move">
+                                    <span class="data-lang" data-tg="Наворҳо" data-ru="Видео">Наворҳо</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Пайванди мустақим ба тамос дар меню -->
+                    <a href="#about" class="smooth-move hover:text-gold relative py-2 group ml-4">
+                        <span class="data-lang" data-tg="ТАМОС" data-ru="КОНТАКТЫ">ТАМОС</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-gold smooth-move group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <div class="border border-gray-700 rounded-sm text-xs font-bold tracking-wider overflow-hidden flex">
+                    <button id="btn-tg" onclick="setLanguage('tg')" class="px-3 py-1.5 bg-gold text-white smooth-move">TJ</button>
+                    <button id="btn-ru" onclick="setLanguage('ru')" class="px-3 py-1.5 bg-transparent text-gray-400 hover:text-white smooth-move">RU</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- САҲИФАИ АСОСӢ БО УСЛУБИ БАННЕРИ НАВИСАНДА (HERO BANNER) -->
+    <section class="relative bg-[#080d17] overflow-hidden border-b border-gray-950 py-16 md:py-24 flex items-center justify-center min-h-[480px] md:min-h-[580px]">
+        <!-- Бэкграунд: Расмҳои китобҳои хирашуда (паси паласа) -->
+        <div class="absolute inset-0 z-0 bg-cover bg-center filter blur-sm scale-105 opacity-25" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0b111e] via-transparent to-[#0b111e] z-0"></div>
+
+        <!-- Темная полоса (Паласа) по центру сомона -->
+        <div class="absolute w-full left-0 right-0 h-[220px] md:h-[260px] bg-[#0e1626]/90 border-t border-b border-gray-800/60 z-10 flex items-center shadow-[inset_0_0_50px_rgba(0,0,0,0.8)]"></div>
+
+        <!-- Маҳтавои рӯи тасма -->
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-20 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            
+            <!-- Портрети нависанда дар тарафи чап (Зебо меистад ва тасмаро мепӯшонад) -->
+            <div class="col-span-12 md:col-span-5 flex justify-center md:justify-start -mt-8 md:-mt-24 md:-mb-24">
+                <div class="relative w-[210px] h-[290px] md:w-[310px] md:h-[420px] overflow-hidden rounded-t-[100px] md:rounded-t-[140px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] border-t-2 border-l border-r border-gold/40 bg-slate-950 smooth-move hover:scale-[1.03] hover:border-gold">
+                    <img src="barotali_1.jpg" alt="Бароти Абдураҳмон" class="w-full h-full object-cover object-top scale-105">
+                    <!-- Градиенти нарм дар поён барои якҷоя шудан ва эффекти "бе фон" -->
+                    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+                </div>
+            </div>
+
+            <!-- Тексти тиллоӣ ва сафеди классикӣ дар даруни тасма (ҷониби рост) -->
+            <div class="col-span-12 md:col-span-7 text-center md:text-left py-4 flex flex-col justify-center space-y-3">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-widest text-gold font-brand uppercase drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] smooth-move cursor-default data-lang" data-tg="Бароти Абдураҳмон" data-ru="Бароти Абдурахмон">
+                    Бароти Абдураҳмон
+                </h1>
+                
+                <div class="flex items-center justify-center md:justify-start space-x-3 space-x-reverse">
+                    <div class="h-[1px] w-12 bg-gold/50"></div>
+                    <p class="text-xs sm:text-sm md:text-base tracking-[0.25em] uppercase text-gray-200 font-serif-book font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] data-lang" 
+                       data-tg="Нависанда, Драматург ва Таърихнигор" 
+                       data-ru="Писатель, Драматург и Историк">
+                        Нависанда, Драматург ва Таърихнигор
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- БАХШИ 1: БА НАЗДИКӢ (FEATURED BOOK) -->
+    <section id="featured-book" class="py-16 bg-[#090d16] flex items-center justify-center border-b border-gray-950">
+        <div class="max-w-5xl w-full mx-4 paper-bg text-gray-900 p-8 md:p-16 rounded-sm smooth-move hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.6)]">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-serif-book text-gray-800 tracking-wide data-lang" data-tg="Ба наздикӣ дар фурӯш аз Бароти Абдураҳмон" data-ru="Скоро в продаже от Бароти Абдурахмона">
+                    Ба наздикӣ дар фурӯш аз Бароти Абдураҳмон
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+                <div class="md:col-span-5 flex justify-center md:justify-end">
+                    <div class="w-64 aspect-[2/3] bg-neutral-300 border border-neutral-400 book-deep-shadow overflow-hidden rounded-sm smooth-move hover:scale-105 hover:rotate-1 cursor-pointer">
+                        <img src="БАРОТАЛИАБДУРАХМОН1" alt="Исмоили Сомонӣ" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 text-center md:text-left space-y-4">
+                    <h3 class="text-3xl font-serif-book font-bold text-slate-900 leading-tight data-lang" data-tg="Исмоили Сомонӣ" data-ru="Исмоили Сомони">
+                        Исмоили Сомонӣ
+                    </h3>
+                    <p class="text-xs text-slate-500 font-medium tracking-wide data-lang" data-tg="Нашри нав: Сентябри 2026" data-ru="Новое издание: Сентябрь 2026">Нашри нав: Сентябри 2026</p>
+                    <p class="text-sm text-slate-700 leading-relaxed font-serif-book max-w-md italic data-lang" data-tg="Романи нави таърихию бадеӣ дар бораи бунёди давлатдории тоҷикон ва шоҳ Исмоили Сомонӣ." data-ru="Новый исторический роман о создании таджикской государственности и царе Исмаиле Сомони.">
+                        Романи нави таърихию бадеӣ дар бораи бунёди давлатдории тоҷикон ва шоҳ Исмоили Сомонӣ.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#" class="inline-block bg-gold text-white text-xs uppercase tracking-widest font-semibold px-6 py-3 rounded-sm shadow-md smooth-move hover:bg-[#b38936] hover:scale-105 data-lang" data-tg="Романро барои худ кашф кунед" data-ru="Открыть для себя роман">
+                            Романро барои худ кашф кунед
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- БАХШИ ЗИНДАГИНОМА (БЕ СУРАТ) -->
+    <section id="biography-section" class="py-24 bg-[#0a101d] border-b border-gray-950 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#ffc222_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold data-lang" data-tg="Муаррифӣ ва Рӯзгор" data-ru="Биография и Путь">Муаррифӣ ва Рӯзгор</span>
+                <h2 class="text-4xl md:text-5xl font-brand text-white tracking-wide uppercase data-lang" data-tg="Зиндагинома" data-ru="Биография">
+                    Зиндагинома
+                </h2>
+                <div class="flex items-center justify-center space-x-4 pt-2">
+                    <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold/60"></div>
+                    <div class="text-gold text-sm">✦</div>
+                    <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold/60"></div>
+                </div>
+            </div>
+
+            <div class="paper-bg text-gray-900 p-8 md:p-16 rounded-sm shadow-2xl relative border-t-4 border-gold">
+                <div class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-gold/40"></div>
+                <div class="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-gold/40"></div>
+                <div class="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-gold/40"></div>
+                <div class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-gold/40"></div>
+
+                <div class="text-base md:text-lg text-slate-800 leading-relaxed space-y-6 font-serif-book text-justify max-w-3xl mx-auto">
+                    <p class="biography-text data-lang" 
+                       data-tg="Бароти Абдураҳмон (Абдураҳмонов Бароталӣ) 1 сентябри соли 1948 дар деҳаи зебоманзари Жари Ҷумҳурии Тоҷикистон таваллуд шудааст. Ӯ яке аз нависандагон, драматургон ва таърихнигорони барҷастаи муосири тоҷик маҳсуб меёбад ва аз соли 1983 узви Иттифоқи нависандагони Тоҷикистон мебошад."
+                       data-ru="Бароти Абдурахмон (Абдурахмонов Баротали) родился 1 сентября 1948 года в живописном селе Жар Республики Таджикистан. Он является одним из выдающихся современных таджикских писателей, драматургов и историков, а также членом Союза писателей Таджикистана с 1983 года.">
+                        Бароти Абдураҳмон (Абдураҳмонов Бароталӣ) 1 сентябри соли 1948 дар деҳаи зебоманзари Жари Ҷумҳурии Тоҷикистон таваллуд шудааст. Ӯ яке аз нависандагон, драматургон ва таърихнигорони барҷастаи муосири тоҷик маҳсуб меёбад ва аз соли 1983 узви Иттифоқи нависандагони Тоҷикистон мебошад.
+                    </p>
+                    <p class="data-lang"
+                       data-tg="Эҷодиёти ӯ бештар ба таҳқиқ ва инъикоси бадеии таърихи пурифтихори халқи тоҷик бахшида шудааст. Асарҳои машҳури ӯ, аз ҷумла романҳои таърихии «Исмоили Сомонӣ», «Камбуҷия» ва «Дорои Бузург» дар байни хонандагон маҳбубияти хосса доранд. Муаллиф бо маҳорати баланди суханварӣ ва таҳлили амиқи сарчашмаҳои таърихӣ тавонистааст симои қаҳрамонони миллиро зинда гардонад."
+                       data-ru="Его творчество в основном посвящено исследованию и художественному отражению славной истории таджикского народа. Его знаменитые произведения, включая исторические романы «Исмаил Сомони», «Камбуджия» и «Дарий Великий», пользуются особой популярностью среди читателей. Автор с высоким художественным мастерством и глубоким анализом исторических источников сумел оживить образы национальных героев.">
+                        Эҷодиёти ӯ бештар ба таҳқиқ ва инъикоси бадеии таърихи пурифтихори халқи тоҷик бахшида шудааст. Асарҳои машҳури ӯ, аз ҷумла романҳои таърихии «Исмоили Сомонӣ», «Камбуҷия» ва «Дорои Бузург» дар байни хонандагон маҳбубияти хосса доранд. Муаллиф бо маҳорати баланди суханварӣ ва таҳлили амиқи сарчашмаҳои таърихӣ тавонистааст симои қаҳрамонони миллиро зинда гардонад.
+                    </p>
+                    <div class="w-full my-6 flex justify-center py-2">
+                        <span class="text-gold/40 text-xl">❦ ❦ ❦</span>
+                    </div>
+                    <p class="data-lang border-t border-slate-200/60 pt-6 italic text-slate-700 font-semibold"
+                       data-tg="Барои саҳми арзандааш дар рушди адабиёт ва фарҳанги тоҷик, соли 2008 Бароти Абдураҳмон барои романи «Исмоили Сомонӣ» барандаи Ҷоизаи давлатии Тоҷикистон ба номи Абӯабдуллоҳи Рӯдакӣ гардид. Инчунин соли 2010 унвони фахрии Корманди шоистаи Тоҷикистонро сазовор шудааст."
+                       data-ru="За весомый вклад в развитие таджикской литературы и культуры в 2008 году Бароти Абдурахмон за роман «Исмаил Сомони» стал лауреатом Государственной премии Таджикистана имени Абуабдулло Рудаки. Also in 2010, he was awarded the honorary title of Distinguished Worker of Tajikistan.">
+                        Барои саҳми арзандааш дар рушди адабиёт ва фарҳанги тоҷик, соли 2008 Бароти Абдураҳмон барои романи «Исмоили Сомонӣ» барандаи Ҷоизаи давлатии Тоҷикистон ба номи Абӯабдуллоҳи Рӯдакӣ гардид. Инчунин соли 2010 унвони фахрии Корманди шоистаи Тоҷикистонро сазовор шудааст.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БАХШИ 2: КИТОБҲО, АШЪОР, АКСҲО ВА НАВОРҲО -->
+    <section id="books-grid-section" class="blue-texture-bg py-20 border-b border-gray-950">
+        <div class="max-w-5xl mx-auto px-6 space-y-20">
+            
+            <!-- Китобҳо (Романҳо) -->
+            <div class="space-y-8">
+                <h3 class="text-center text-sm md:text-base tracking-widest text-gray-300 uppercase data-lang" data-tg="Романҳои Таърихӣ" data-ru="Исторические Романы">Романҳои Таърихӣ</h3>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 data-lang" data-tg="Камбуҷия" data-ru="Камбуджия">Камбуҷия</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 data-lang" data-tg="Дорои Бузург" data-ru="Дарий Великий">Дорои Бузург</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 data-lang" data-tg="Исмоили Сомонӣ" data-ru="Исмоили Сомони">Исмоили Сомонӣ</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 data-lang" data-tg="Дунёи сабзи ишқ" data-ru="Зеленый мир любви">Дунёи сабзи ишқ</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Кино ва маҷмӯаҳо -->
+            <div class="space-y-8">
+                <h3 class="text-center text-sm md:text-base tracking-widest text-gray-300 uppercase data-lang" data-tg="Кино ва Маҷмӯаҳо" data-ru="Кино и Сборники">Кино ва Маҷмӯаҳо</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 data-lang" data-tg="Кимиёкаҳ" data-ru="Кимиёках">Кимиёкаҳ</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 data-lang" data-tg="Розҳои шабҳангом" data-ru="Ночные тайны">Розҳои шабҳангом</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 data-lang" data-tg="Куруш ва Томирис" data-ru="Кир и Томирис">Куруш ва Томирис</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 data-lang" data-tg="Алвидоъ, ишқ" data-ru="Прощай, любовь">Алвидоъ, ишқ</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- БАХШИ АШЪОР -->
+            <div id="poetry-section" class="space-y-8 pt-8">
+                <h3 class="text-center text-sm md:text-base tracking-widest text-gray-300 uppercase data-lang" data-tg="Ашъор" data-ru="Поэзия">Ашъор</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 justify-center">
+                    
+                    <div class="flex flex-col items-center space-y-2 smooth-move hover:-translate-y-3 hover:scale-105 group cursor-pointer">
+                        <div class="w-full aspect-[2/3] bg-gray-800/30 border border-gray-800/80 book-deep-shadow rounded-sm flex items-center justify-center group-hover:border-gold smooth-move">
+                            <span class="text-xs text-gray-500 text-center px-2 data-lang" data-tg="Маҷмӯаи шеърҳо" data-ru="Сборник стихов">Маҷмӯаи шеърҳо</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- БАХШИ АКСҲО (PHOTOS SECTION) -->
+            <div id="photos-section" class="space-y-8 pt-12 border-t border-gray-900/60">
+                <div class="text-center">
+                    <h3 class="text-sm md:text-base tracking-widest text-gray-300 uppercase data-lang" data-tg="Аксҳо" data-ru="Фотогалерея">Аксҳо</h3>
+                    <p class="text-xs text-gray-500 mt-1 data-lang" data-tg="Лаҳзаҳои таърихӣ ва рӯзгори нависанда" data-ru="Исторические моменты и жизнь писателя">Лаҳзаҳои таърихӣ ва рӯзгори нависанда</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Акси Асосии Фиристодашуда -->
+                    <div class="relative overflow-hidden rounded-sm border border-gray-800/80 bg-gray-800/10 group aspect-[3/4] shadow-lg smooth-move hover:scale-[1.03] hover:border-gold cursor-pointer">
+                        <img src="БАРОТАЛИ АБДУРАХМОН 1.jpg" alt="Бароти Абдураҳмон" class="w-full h-full object-cover grayscale group-hover:grayscale-0 smooth-move">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 smooth-move p-4 flex items-end">
+                            <p class="text-xs text-gold uppercase tracking-widest font-bold data-lang" data-tg="Портрети расмии Бароти Абдураҳмон" data-ru="Официальный портрет Бароти Абдурахмона">Портрети расмии Бароти Абдураҳмон</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Placeholder 1 -->
+                    <div class="relative overflow-hidden rounded-sm border border-gray-800/80 bg-gray-800/20 group aspect-[3/4] shadow-lg smooth-move hover:scale-[1.03] hover:border-gold cursor-pointer flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop" alt="Эҷодиёт" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 smooth-move">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
+                            <p class="text-xs text-gray-300 group-hover:text-gold uppercase tracking-widest font-bold data-lang" data-tg="Ҷараёни эҷоди асарҳо" data-ru="Процесс написания книг">Ҷараёни эҷоди асарҳо</p>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder 2 -->
+                    <div class="relative overflow-hidden rounded-sm border border-gray-800/80 bg-gray-800/20 group aspect-[3/4] shadow-lg smooth-move hover:scale-[1.03] hover:border-gold cursor-pointer flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=600&auto=format&fit=crop" alt="Китобҳо" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 smooth-move">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
+                            <p class="text-xs text-gray-300 group-hover:text-gold uppercase tracking-widest font-bold data-lang" data-tg="Нашри китобҳои нав" data-ru="Публикация новых изданий">Нашри китобҳои нав</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- БАХШИ НАВОРҲО (VIDEOS SECTION) -->
+            <div id="videos-section" class="space-y-8 pt-12 border-t border-gray-900/60">
+                <div class="text-center">
+                    <h3 class="text-sm md:text-base tracking-widest text-gray-300 uppercase data-lang" data-tg="Наворҳо" data-ru="Видеоматериалы">Наворҳо</h3>
+                    <p class="text-xs text-gray-500 mt-1 data-lang" data-tg="Намоишҳои телевизионӣ ва мусоҳибаҳои нависанда" data-ru="Телевизионные передачи и интервью писателя">Намоишҳои телевизионӣ ва мусоҳибаҳои нависанда</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Навори 1 -->
+                    <div class="group relative bg-[#0d1628]/60 border border-gray-800/80 rounded-sm overflow-hidden shadow-lg smooth-move hover:border-gold/50 cursor-pointer">
+                        <div class="aspect-[16/9] bg-slate-950 relative flex items-center justify-center overflow-hidden">
+                            <!-- Background Image Mock -->
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop" alt="Интервью" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 smooth-move">
+                            
+                            <!-- Play icon custom -->
+                            <div class="w-14 h-14 rounded-full bg-gold/90 text-slate-950 flex items-center justify-center shadow-lg transform group-hover:scale-110 smooth-move z-10">
+                                <svg class="w-6 h-6 ml-1 fill-current" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-[#0a101d]">
+                            <h4 class="text-sm font-semibold tracking-wide text-gray-200 group-hover:text-gold smooth-move data-lang" data-tg="Мусоҳибаи махсус дар бораи шоҳ Исмоили Сомонӣ" data-ru="Специальное интервью об Исмаиле Сомони">Мусоҳибаи махсус дар бораи шоҳ Исмоили Сомонӣ</h4>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1 data-lang" data-tg="Шабакаи «Баҳористон» — 2024" data-ru="Телеканал «Бахористон» — 2024">Шабакаи «Баҳористон» — 2024</p>
+                        </div>
+                    </div>
+
+                    <!-- Навори 2 -->
+                    <div class="group relative bg-[#0d1628]/60 border border-gray-800/80 rounded-sm overflow-hidden shadow-lg smooth-move hover:border-gold/50 cursor-pointer">
+                        <div class="aspect-[16/9] bg-slate-950 relative flex items-center justify-center overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop" alt="Драматургия" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 smooth-move">
+                            
+                            <div class="w-14 h-14 rounded-full bg-gold/90 text-slate-950 flex items-center justify-center shadow-lg transform group-hover:scale-110 smooth-move z-10">
+                                <svg class="w-6 h-6 ml-1 fill-current" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-[#0a101d]">
+                            <h4 class="text-sm font-semibold tracking-wide text-gray-200 group-hover:text-gold smooth-move data-lang" data-tg="Намоишномаи таърихии «Камбуҷия» дар театр" data-ru="Исторический спектакль «Камбуджия» в театре">Намоишномаи таърихии «Камбуҷия» дар театр</h4>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1 data-lang" data-tg="Театри Лоҳутӣ" data-ru="Театр имени Лахути">Театри Лоҳутӣ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Тугмаи поёни бахшҳо -->
+            <div class="text-center pt-8">
+                <a href="#" class="inline-block bg-gold text-white text-xs uppercase tracking-widest font-semibold px-8 py-3.5 rounded-sm shadow-md smooth-move hover:scale-105 data-lang" data-tg="Дидани ҳамаи китобҳо &gt;" data-ru="Посмотреть все книги &gt;">
+                    Дидани ҳамаи китобҳо &gt;
+                </a>
+            </div>
+
+            <!-- Шабакаҳои иҷтимоӣ -->
+            <div class="text-center space-y-4 pt-8 border-t border-gray-900">
+                <p class="text-xs text-gray-400 tracking-wider data-lang" data-tg="Бароти Абдураҳмонро дар шабакаҳои иҷтимоӣ пайгирӣ кунед:" data-ru="Следите за Бароти Абдурахмоном в социальных сетях:">Бароти Абдураҳмонро дар шабакаҳои иҷтимоӣ пайгирӣ кунед:</p>
+                <div class="flex justify-center space-x-4 space-x-reverse">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center font-bold text-xs smooth-move hover:scale-110 hover:bg-gold hover:text-white">f</a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center font-bold text-xs smooth-move hover:scale-110 hover:bg-gold hover:text-white">x</a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center font-bold text-xs smooth-move hover:scale-110 hover:bg-gold hover:text-white">i</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ТАМОС (КОНТАКТҲО) -->
+    <section id="about" class="py-20 bg-[#080c14] border-b border-gray-950 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 space-y-12 relative z-10">
+            
+            <div class="text-center space-y-2">
+                <h4 class="text-gold font-brand uppercase tracking-widest text-base data-lang" data-tg="Тамос" data-ru="Краткая информация и контакты">
+                <div class="h-[1px] w-24 bg-gold/40 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+                
+                <div class="bg-[#0b111e]/50 border border-gray-900 rounded-sm p-6 md:p-8 flex flex-col justify-center space-y-4">
+                    <p class="text-gray-400 text-sm leading-relaxed font-light text-justify data-lang" 
+  
+                    </p>
+                </div>
+
+                <!-- НАВСОЗИИ ИНФОИ ТАМОС (CONTACT INFO SECTION) -->
+                <div class="bg-[#0b111e]/80 border border-gold/30 rounded-sm p-6 md:p-8 space-y-6 flex flex-col justify-center shadow-xl">
+                    <div class="space-y-4">
+                        <!-- Суроға -->
+                        <div class="flex items-start space-x-3 space-x-reverse">
+                            <span class="text-gold mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <h5 class="text-xs text-gray-500 uppercase tracking-widest font-semibold data-lang" data-tg="Суроға" data-ru="Адрес">Суроға</h5>
+                                <p class="text-sm text-gray-200 font-medium data-lang" data-tg="ш. Душанбе" data-ru="г. Душанбе">ш. Душанбе</p>
+                            </div>
+                        </div>
+
+                        <!-- Телефон -->
+                        <div class="flex items-start space-x-3 space-x-reverse">
+                            <span class="text-gold mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <h5 class="text-xs text-gray-500 uppercase tracking-widest font-semibold data-lang" data-tg="Телефон" data-ru="Телефон">Телефон</h5>
+                                <a href="tel:+992988666563" class="text-sm text-gold hover:underline font-medium">+992 988 666 563</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start space-x-3 space-x-reverse">
+                            <span class="text-gold mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <h5 class="text-xs text-gray-500 uppercase tracking-widest font-semibold data-lang" data-tg="Почтаи электронӣ" data-ru="Эл. почта">Email</h5>
+                                <a href="mailto:baroti-abdurahmon@mail.ru" class="text-sm text-gray-200 hover:text-gold smooth-move font-medium">baroti-abdurahmon@mail.ru</a>
+                            </div>
+                        </div>
+
+                        <!-- Web-сомона -->
+                        <div class="flex items-start space-x-3 space-x-reverse">
+                            <span class="text-gold mt-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <h5 class="text-xs text-gray-500 uppercase tracking-widest font-semibold data-lang" data-tg="Веб-сомона" data-ru="Веб-сайт">Web-сомона</h5>
+                                <a href="http://www.barotali.tj" target="_blank" class="text-sm text-gold hover:underline font-medium">www.barotali.tj</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ФУТЕР (FOOTER) -->
+    <footer class="bg-[#05080f] py-12 text-[11px] text-gray-500 border-t border-gray-950">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+            <div class="text-gray-400 font-brand tracking-widest text-sm uppercase data-lang" data-tg="БАРОТИ АБДУРАҲМОН" data-ru="БАРОТИ АБДУРАХМОН">
+                БАРОТИ АБДУРАҲМОН
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 text-gray-600 max-w-2xl mx-auto pt-2">
+                <a href="#" class="hover:text-gray-400 transition data-lang" data-tg="Сиёсати махфият" data-ru="Политика конфиденциальности">Сиёсати махфият</a>
+                <span class="text-gray-800">|</span>
+                <a href="#" class="hover:text-gray-400 transition data-lang" data-tg="Шартҳои истифода" data-ru="Условия использования">Шартҳои истифода</a>
+            </div>
+            <p class="text-gray-600 pt-4">&copy; 2026 Бароти Абдураҳмон. <span class="data-lang" data-tg="Ҳамаи ҳуқуқҳо ҳифз шудаанд." data-ru="Все права защищены.">Ҳамаи ҳуқуқҳо ҳифз шудаанд.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            // Пайдо кардани ҳамаи унсурҳо барои ивази забон
+            const elements = document.querySelectorAll('.data-lang');
+            elements.forEach(el => {
+                if (lang === 'tg') {
+                    el.innerHTML = el.getAttribute('data-tg');
+                } else if (lang === 'ru') {
+                    el.innerHTML = el.getAttribute('data-ru');
+                }
+            });
+
+            // Танзими услуби тугмачаҳои интихоб
+            const btnTg = document.getElementById('btn-tg');
+            const btnRu = document.getElementById('btn-ru');
+
+            if (lang === 'tg') {
+                if(btnTg) btnTg.className = "px-3 py-1.5 bg-gold text-white smooth-move";
+                if(btnRu) btnRu.className = "px-3 py-1.5 bg-transparent text-gray-400 hover:text-white smooth-move";
+            } else {
+                if(btnRu) btnRu.className = "px-3 py-1.5 bg-gold text-white smooth-move";
+                if(btnTg) btnTg.className = "px-3 py-1.5 bg-transparent text-gray-400 hover:text-white smooth-move";
+            }
+        }
+    </script>
+
+</body>
+</html>
